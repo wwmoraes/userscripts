@@ -2,7 +2,7 @@
 // @name         Native Overrides
 // @description  Overrides native functions using Native library to fix/extend functionality.
 // @author       2013, William Moraes (http://wwmoraes.com/)
-// @version      0.1
+// @version      0.2
 // @match        *://*/*
 // @grant        none
 // @require      https://openuserjs.org/src/libs/wwmoraes/Native.js
@@ -17,5 +17,11 @@
 (function(){
 	'use strict';
 	
-	window.open = function(url, target){Native.window.open.apply(this, Array.prototype.slice.call(arguments, 0, 2));};
+	document.addEventListener("pageshow", function(){
+		Function.override('window.open', function(){base.apply(this, Array.prototype.slice.call(arguments, 0, 2));});
+	});
+	
+	document.addEventListener("pagehide", function(){
+		Function.restore('window.open');
+	});
 })();
