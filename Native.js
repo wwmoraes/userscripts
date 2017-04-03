@@ -7,16 +7,38 @@
 // @homepageURL  https://github.com/wwmoraes/userscripts
 // @supportURL   https://github.com/wwmoraes/userscripts/issues
 
-(function() {
-    'use strict';
-
-    // Native saves
-    window.Native = {
-        window: {
-            open: window.open
-        }
-    };
-
-    // Example: Override to prevent popups (ignores third parameter)
-    //window.open = function(url, target){Native.window.open.apply(this, Array.prototype.slice.call(arguments, 0, 2));};
+(function(){
+	'use strict';
+	
+	if (Object.Natives === undefined){
+		Object.defineProperty(Object,'Natives',{
+			__proto__: null,
+			enumerable: false,
+			configurable: false,
+			writeable: false,
+			value: {}
+		});
+	}
+	
+	Function.override = function(oldFunctionName, newFunction){
+		if(typeof(oldFunctionName) !== "string") throw new TypeError('oldFunctionName must be a string');
+		if(typeof(newFunction) !== "function") throw new TypeError('newFunction must be a function');
+		var nativeName = "Object.Natives['"+oldFunctionName+"']";
+		var nativeFuncType = typeof(eval(nativeName));
+		if(oldFunctionName != "" && nativeFuncType === "undefined")
+			eval(nativeName + "=" + oldFunctionName);
+		else console.warn('Function ' + oldFunctionName + ' already overridden. Dropping the old function.');
+		eval(oldFunctionName + "=" + newFunction.toString().replace(/(\W|^)base\./g, "$1Object.Natives['"+oldFunctionName+"']."));
+	};
+	
+	Function.restore = function(oldFunctionName){
+		if(typeof(oldFunctionName) !== "string") throw new TypeError('oldFunctionName must be a string');
+		var nativeName = "Object.Natives['"+oldFunctionName+"']";
+		var nativeFuncType = typeof(eval(nativeName));
+		if(oldFunctionName != "" && nativeFuncType !== "undefined")
+		{
+			eval(oldFunctionName + "=" + nativeName);
+			eval(nativeName + "=" + undefined);
+		} else { console.warn('Function ' + oldFunctionName + ' is set to native or changed by third parties. Ignoring the restore...'); }
+	};
 })();
