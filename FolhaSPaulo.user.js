@@ -1,15 +1,14 @@
 // ==UserScript==
 // @name         Folha de S.Paulo
-// @namespace    http://tampermonkey.net/
-// @version      0.1
 // @description  Fix the site by removing the tons of ads EVEN FOR PAID USERS!
 // @author       2016, William Moraes (http://wwmoraes.com/)
+// @version      0.1
 // @match        http://*.folha.uol.com.br/*
-// @license      GPLv3; https://opensource.org/licenses/GPL-3.0
-// @updateURL    https://openuserjs.org/meta/wwmoraes/Folha_de_S.Paulo.meta.js
-// @downloadURL  https://openuserjs.org/src/scripts/wwmoraes/Folha_de_S.Paulo.user.js
+// @license      GPL version 3 or any later version; http://www.gnu.org/copyleft/gpl.html
 // @homepageURL  https://github.com/wwmoraes/userscripts
 // @supportURL   https://github.com/wwmoraes/userscripts/issues
+// @updateURL    https://openuserjs.org/meta/wwmoraes/Folha_de_S.Paulo.meta.js
+// @downloadURL  https://openuserjs.org/src/scripts/wwmoraes/Folha_de_S.Paulo.user.js
 // ==/UserScript==
 
 (function() {
