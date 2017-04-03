@@ -1,4 +1,4 @@
-﻿// ==UserScript==
+// ==UserScript==
 // @name         Native Overrides
 // @description  Overrides native functions using Native library to fix/extend functionality.
 // @author       2013, William Moraes (http://wwmoraes.com/)
