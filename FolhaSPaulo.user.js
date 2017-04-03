@@ -3,8 +3,13 @@
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @description  Fix the site by removing the tons of ads EVEN FOR PAID USERS!
-// @author       William Moraes
+// @author       2016, William Moraes (http://wwmoraes.com/)
 // @match        http://*.folha.uol.com.br/*
+// @license      GPLv3; https://opensource.org/licenses/GPL-3.0
+// @updateURL    https://openuserjs.org/meta/wwmoraes/Folha_de_S.Paulo.meta.js
+// @downloadURL  https://openuserjs.org/src/scripts/wwmoraes/Folha_de_S.Paulo.user.js
+// @homepageURL  https://github.com/wwmoraes/userscripts
+// @supportURL   https://github.com/wwmoraes/userscripts/issues
 // ==/UserScript==
 
 (function() {
