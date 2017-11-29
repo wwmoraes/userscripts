@@ -1,13 +1,17 @@
+// ==UserScript==
+// @author       William Moraes (http://wwmoraes.com/)
+// @exclude      *
+// ==UserLibrary==
 // @name         Native
 // @description  Save native functions to allow overrides to fix/extend functionality.
-// @author       2013, William Moraes (http://wwmoraes.com/)
 // @version      1.1
-// @grant        none
 // @copyright    2013, William Moraes (http://wwmoraes.com/)
-// @license      GPL version 3 or any later version; http://www.gnu.org/copyleft/gpl.html
+// @license      GPL-3.0; http://www.gnu.org/copyleft/gpl.html
+// ==/UserLibrary==
+// @grant        none
 // @homepageURL  https://github.com/wwmoraes/userscripts
 // @supportURL   https://github.com/wwmoraes/userscripts/issues
-
+// ==/UserScript==
 (function(){
 	
 	'use strict';
