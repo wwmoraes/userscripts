@@ -4,7 +4,7 @@
 // @version      0.1
 // @include      http://mind42.com/mindmap/*
 // @copyright    2013, William Moraes (http://wwmoraes.com/)
-// @license      GPL version 3 or any later version; http://www.gnu.org/copyleft/gpl.html
+// @license      GPL-3.0; http://www.gnu.org/copyleft/gpl.html
 // @homepageURL  https://github.com/wwmoraes/userscripts
 // @supportURL   https://github.com/wwmoraes/userscripts/issues
 // @updateURL    https://openuserjs.org/meta/wwmoraes/Mind42.meta.js

@@ -1,10 +1,11 @@
 // ==UserScript==
 // @name         Folha de S.Paulo
 // @description  Fix the site by removing the tons of ads EVEN FOR PAID USERS!
-// @author       2016, William Moraes (http://wwmoraes.com/)
+// @author       William Moraes (http://wwmoraes.com/)
 // @version      0.1
 // @match        http://*.folha.uol.com.br/*
-// @license      GPL version 3 or any later version; http://www.gnu.org/copyleft/gpl.html
+// @license      GPL-3.0; http://www.gnu.org/copyleft/gpl.html
+// @copyright    2016, William Moraes (http://wwmoraes.com/)
 // @homepageURL  https://github.com/wwmoraes/userscripts
 // @supportURL   https://github.com/wwmoraes/userscripts/issues
 // @updateURL    https://openuserjs.org/meta/wwmoraes/Folha_de_S.Paulo.meta.js
