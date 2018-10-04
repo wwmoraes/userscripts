@@ -2,7 +2,7 @@
 // @name         Blackboard
 // @description  Fix some anoying limitations and problems of BB.
 // @copyright    2018, William Moraes (https://william.moraes.nom.br/)
-// @license      GPL-3.0; http://www.gnu.org/copyleft/gpl.html
+// @license      GPL-3.0-or-later; http://www.gnu.org/licenses/gpl-3.0.txt
 // @icon         https://www.blackboard.com/images/favicon.ico
 // @homepageURL  https://github.com/wwmoraes/userscripts
 // @supportURL   https://github.com/wwmoraes/userscripts/issues
