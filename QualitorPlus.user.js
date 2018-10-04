@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name       Qualitor+
-// @iconURL    http://10.1.250.181/framework/images/default/16/qualitor.ico
+// @iconURL    http://www.qualitor.com.br/assets/uploads/wt_global_favicon/ceb2c-favicon.png
 // @namespace  http://wwmoraes.com/
 // @author     William Moraes
 // @version    0.3
