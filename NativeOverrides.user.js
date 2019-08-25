@@ -19,6 +19,8 @@
 // @grant           none
 // ==/UserScript==
 
+/* global base */
+
 (function(){
 	'use strict';
 

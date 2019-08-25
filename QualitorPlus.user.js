@@ -21,6 +21,8 @@
 // @match           http://helpdesk.odebrecht.com/html/index.php
 // ==/UserScript==
 
+/* global $, jQuery */
+
 (function() {
     'use strict';
 
@@ -36,6 +38,7 @@
         },
         abrirChamado: function(e){
             e.preventDefault();
+            var cdChamado = null;
             if(!(cdChamado=window.prompt('Chamado:')))
                 return;
             window.open(window.location.protocol+'//'+window.location.hostname+'/html/hd/hdchamado/cadastro_chamado.php?cdchamado='+cdChamado,'_blank');

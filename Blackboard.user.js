@@ -19,11 +19,13 @@
 // @grant           none
 // ==/UserScript==
 
+/* global BasicPage, BASIC_PAGE */
+
 (function() {
     'use strict';
 
     RegExp.escape = function(string) {
-        return string.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')
+        return string.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&');
     };
 
     function matchURL(url){
@@ -37,8 +39,8 @@
         BasicPage.prototype.zoomToWidth = function(){
             var maxZoom = (this._getWindowWidth() - 100) / this._getFitScreenSizes(this.pageRect.width, this.pageRect.height).width;
             this.currentZoom = maxZoom;
-            this._setSizes.call(this);
-            this._fontCorrection.call(this);
+            this._setSizes();
+            this._fontCorrection();
         };
 
         // Zoom to Width on page load

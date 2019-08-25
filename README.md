@@ -66,9 +66,9 @@ Type examples:
 
 ## Links
 
-- Project homepage: https://github.com/wwmoraes/userscripts
-- Repository: https://github.com/wwmoraes/userscripts
-- Issue tracker: https://github.com/wwmoraes/userscripts/issues
+- Project homepage: [https://github.com/wwmoraes/userscripts](https://github.com/wwmoraes/userscripts)
+- Repository: [https://github.com/wwmoraes/userscripts](https://github.com/wwmoraes/userscripts)
+- Issue tracker: [https://github.com/wwmoraes/userscripts/issues](https://github.com/wwmoraes/userscripts/issues)
 
 ## Licensing
 
