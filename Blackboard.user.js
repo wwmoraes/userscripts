@@ -1,21 +1,22 @@
 // ==UserScript==
-// @name         Blackboard
-// @description  Fix some anoying limitations and problems of BB.
-// @copyright    2018, William Moraes (https://william.moraes.nom.br/)
-// @license      GPL-3.0-or-later; http://www.gnu.org/licenses/gpl-3.0.txt
-// @icon         https://www.blackboard.com/images/favicon.ico
-// @homepageURL  https://github.com/wwmoraes/userscripts
-// @supportURL   https://github.com/wwmoraes/userscripts/issues
-// @version      0.1
-// @updateURL    https://openuserjs.org/meta/wwmoraes/Blackboard.meta.js
+// @name            Blackboard
+// @description     Fix some anoying limitations and problems of BB.
+// @version         0.1
+// @copyright       2018, William Moraes (https://william.moraes.nom.br)
+// @license         GPL-3.0-or-later; http://www.gnu.org/licenses/gpl-3.0.txt
+// @icon            https://www.blackboard.com/images/favicon.ico
+// @author          William Moraes <https:/>/scr.im/>wwm> (https://william.moraes.nom.br)
+// @namespace       william.moraes.nom.br
+// @homepageURL     https://github.com/wwmoraes/userscripts
+// @supportURL      https://github.com/wwmoraes/userscripts/issues
+// @contributionURL https://github.com/wwmoraes/userscripts
+// @updateURL       https://openuserjs.org/meta/wwmoraes/Blackboard.meta.js
+// @downloadURL     https://openuserjs.org/src/scripts/wwmoraes/Blackboard.js
 // ==OpenUserJS==
-// @author wwmoraes
+// @author          wwmoraes
 // ==/OpenUserJS==
-// @downloadURL  https://openuserjs.org/src/scripts/wwmoraes/Blackboard.js
-// @namespace    https://william.moraes.nom.br/
-// @author       William Moraes
-// @match        https://*.blackboard.com/**/Flipping_book/**/basic-html/*
-// @grant        none
+// @match           https://*.blackboard.com/**/Flipping_book/**/basic-html/*
+// @grant           none
 // ==/UserScript==
 
 (function() {

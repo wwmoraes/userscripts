@@ -1,15 +1,24 @@
 // ==UserScript==
-// @name       Qualitor+
-// @iconURL    http://www.qualitor.com.br/assets/uploads/wt_global_favicon/ceb2c-favicon.png
-// @namespace  http://wwmoraes.com/
-// @author     William Moraes
-// @version    0.3
-// @description Melhora a usabilidade do qualitor.
-// @match      http://10.1.250.181/html/index.php
-// @match      http://suporteti.odebrecht.com/html/index.php
-// @match      http://helpdesk.odebrecht.com/html/index.php
-// @copyright  2012+, William Moraes
-// @require    https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js
+// @name            Qualitor+
+// @description     Melhora a usabilidade do qualitor.
+// @version         0.3
+// @copyright       2012, William Moraes (https://william.moraes.nom.br)
+// @license         GPL-3.0-or-later; http://www.gnu.org/licenses/gpl-3.0.txt
+// @icon            http://www.qualitor.com.br/assets/uploads/wt_global_favicon/ceb2c-favicon.png
+// @author          William Moraes <https:/>/scr.im/>wwm> (https://william.moraes.nom.br)
+// @namespace       william.moraes.nom.br
+// @homepageURL     https://github.com/wwmoraes/userscripts
+// @supportURL      https://github.com/wwmoraes/userscripts/issues
+// @contributionURL https://github.com/wwmoraes/userscripts
+// @updateURL       https://openuserjs.org/meta/wwmoraes/QualitorPlus.meta.js
+// @downloadURL     https://openuserjs.org/src/scripts/wwmoraes/QualitorPlus.js
+// ==OpenUserJS==
+// @author          wwmoraes
+// ==/OpenUserJS==
+// @require         https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js
+// @match           http://10.1.250.181/html/index.php
+// @match           http://suporteti.odebrecht.com/html/index.php
+// @match           http://helpdesk.odebrecht.com/html/index.php
 // ==/UserScript==
 
 (function() {

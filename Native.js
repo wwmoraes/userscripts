@@ -1,16 +1,23 @@
 // ==UserScript==
-// @author       William Moraes (http://wwmoraes.com/)
-// @exclude      *
+// @exclude         *
 // ==UserLibrary==
-// @name         Native
-// @description  Save native functions to allow overrides to fix/extend functionality.
-// @version      1.1
-// @copyright    2013, William Moraes (http://wwmoraes.com/)
-// @license      GPL-3.0; http://www.gnu.org/copyleft/gpl.html
+// @name            Native
+// @description     Save native functions to allow overrides to fix/extend functionality.
+// @version         1.1
+// @copyright       2013, William Moraes (https://william.moraes.nom.br)
+// @license         GPL-3.0-or-later; http://www.gnu.org/licenses/gpl-3.0.txt
 // ==/UserLibrary==
-// @grant        none
-// @homepageURL  https://github.com/wwmoraes/userscripts
-// @supportURL   https://github.com/wwmoraes/userscripts/issues
+// @author          William Moraes <https:/>/scr.im/>wwm> (https://william.moraes.nom.br)
+// @namespace       william.moraes.nom.br
+// @homepageURL     https://github.com/wwmoraes/userscripts
+// @supportURL      https://github.com/wwmoraes/userscripts/issues
+// @contributionURL https://github.com/wwmoraes/userscripts
+// @updateURL       https://openuserjs.org/meta/wwmoraes/Native.meta.js
+// @downloadURL     https://openuserjs.org/src/scripts/wwmoraes/Native.js
+// ==OpenUserJS==
+// @author          wwmoraes
+// ==/OpenUserJS==
+// @grant           none
 // ==/UserScript==
 (function(){
 	
