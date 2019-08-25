@@ -4,7 +4,7 @@ module.exports = {
     },
     "extends": "eslint:recommended",
     "parserOptions": {
-        "ecmaVersion": 5
+        "ecmaVersion": 6
     },
     "rules": {
         "accessor-pairs": "error",
@@ -46,7 +46,8 @@ module.exports = {
         "func-names": "off",
         "func-style": [
             "error",
-            "declaration"
+            "declaration",
+            { "allowArrowFunctions": true }
         ],
         "function-paren-newline": "error",
         "generator-star-spacing": "error",
@@ -75,7 +76,7 @@ module.exports = {
         "max-lines-per-function": "error",
         "max-nested-callbacks": "error",
         "max-params": "error",
-        "max-statements": "error",
+        "max-statements": "off",
         "max-statements-per-line": "off",
         "multiline-comment-style": [
             "error",
