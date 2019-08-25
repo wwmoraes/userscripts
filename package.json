@@ -1,0 +1,22 @@
+{
+  "name": "userscripts",
+  "version": "1.0.0",
+  "description": "UserScripts to keep yourself sane and productive",
+  "scripts": {
+    "lint": "eslint ./*.js --max-warnings=0 --format=codeframe"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wwmoraes/userscripts.git"
+  },
+  "keywords": [],
+  "author": "William Moraes",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/wwmoraes/userscripts/issues"
+  },
+  "homepage": "https://github.com/wwmoraes/userscripts#readme",
+  "devDependencies": {
+    "eslint": "^6.2.2"
+  }
+}

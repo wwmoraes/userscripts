@@ -18,12 +18,15 @@ Some scripts require configuration, which is present in the very first lines of 
 
 ## Developing
 
-As these are simple JS files, to develop you just have to clone:
+To start coding:
 
 ```shell
 git clone https://github.com/wwmoraes/userscripts.git
 cd userscripts/
+yarn install
 ```
+
+Although these are simple JS files, this repo uses ESLint to lint and keep a single code style.
 
 You'll be able to test by installing the local version, as most extensions allows that. Some others will even allow editing through it's interface (e.g. Tampermonkey).
 
