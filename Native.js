@@ -12,8 +12,6 @@
 // @homepageURL     https://github.com/wwmoraes/userscripts
 // @supportURL      https://github.com/wwmoraes/userscripts/issues
 // @contributionURL https://github.com/wwmoraes/userscripts
-// @updateURL       https://openuserjs.org/meta/wwmoraes/Native.meta.js
-// @downloadURL     https://openuserjs.org/src/scripts/wwmoraes/Native.js
 // ==OpenUserJS==
 // @author          wwmoraes
 // ==/OpenUserJS==
