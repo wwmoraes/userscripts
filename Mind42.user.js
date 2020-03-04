@@ -11,14 +11,17 @@
 // @contributionURL https://github.com/wwmoraes/userscripts
 // @updateURL       https://openuserjs.org/meta/wwmoraes/Mind42.meta.js
 // @downloadURL     https://openuserjs.org/src/scripts/wwmoraes/Mind42.user.js
+// @run-at document-body
 // ==OpenUserJS==
 // @author          wwmoraes
 // ==/OpenUserJS==
 // @include         http://mind42.com/mindmap/*
+// @include         https://mind42.com/mindmap/*
 // ==/UserScript==
 
 (function(){
     'use strict';
 
     document.getElementById('sidebar').setAttribute('style','display:none; width:0;');
+    document.getElementById('content').setAttribute('style','margin-right:0;');
 })();
