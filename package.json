@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/wwmoraes/userscripts#readme",
   "devDependencies": {
-    "eslint": "^7.10.0"
+    "eslint": "^7.11.0"
   }
 }
