@@ -19,7 +19,7 @@ declare namespace Tampermonkey {
     readonly status: number;
     readonly statusText: string;
     readonly responseHeaders: string;
-    readonly response: unknown;
+    readonly response: string;
     readonly responseXML: Document | false;
     readonly responseText: string;
     readonly context?: Context;
