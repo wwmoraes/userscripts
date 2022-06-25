@@ -55,6 +55,39 @@ interface Context extends Record<string, unknown> {
 }
 
 (() => {
+  const isLocalStorageAvailable = (): boolean => {
+    try {
+      if (typeof window.localStorage === "undefined") return false;
+      const key = "__storage_test__";
+      window.localStorage.setItem(key, key);
+      if (window.localStorage.getItem(key) !== key) return false;
+      window.localStorage.removeItem(key);
+      return true;
+    }
+    catch (e) {
+      return e instanceof DOMException && (
+        // everything except Firefox
+        e.code === 22 ||
+        // Firefox
+        e.code === 1014 ||
+        // test name field too, because code might not be present
+        // everything except Firefox
+        e.name === "QuotaExceededError" ||
+        // Firefox
+        e.name === "NS_ERROR_DOM_QUOTA_REACHED") &&
+        // acknowledge QuotaExceededError only if there's something already stored
+        window.localStorage && window.localStorage.length !== 0;
+    }
+  };
+
+  if (!isLocalStorageAvailable()) {
+    console.warn("local storage IS NOT available! AllKeyShop cannot work without it :/");
+    GM_registerMenuCommand("Please enable local storage", () => {
+      alert("AllKeyShop requires local storage to persist your steam ID number to sync properly. Please enable it and reload the page.");
+    }, "x");
+    return;
+  }
+
   const isRecord = (data: unknown):
     data is Record<string, unknown> =>
     data !== null &&
