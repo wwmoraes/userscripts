@@ -104,6 +104,9 @@ interface Context extends Record<string, unknown> {
       method: "POST",
       url: "https://steamid.io/lookup",
       data: `input=${input}`,
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
       onload: resolve,
       onerror: reject,
     }));
