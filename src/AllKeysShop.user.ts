@@ -19,6 +19,7 @@
 // @connect         steamid.io
 // @connect         store.steampowered.com
 // @grant           GM_registerMenuCommand
+// @grant           GM_unregisterMenuCommand
 // @grant           GM_xmlhttpRequest
 // ==/UserScript==
 
@@ -52,6 +53,7 @@ interface Context extends Record<string, unknown> {
   gameInfo: IndexedDBManager<GameInfo>;
   countryCode: string;
   steam64ID: string;
+  setUsernameCmd: number;
 }
 
 (() => {
@@ -460,6 +462,66 @@ interface Context extends Record<string, unknown> {
     gameRows.forEach(gameRow => checkGameEntry(gameRow, context));
   };
 
+  const setUsernameMenu = (context: Context) => async () => {
+    try {
+      context.steam64ID = await getSteam64ID();
+      if (context.steam64ID === "") return;
+
+      GM_unregisterMenuCommand(context.setUsernameCmd);
+      // TODO create menu manager middleware to prevent a reload
+      // context.setUsernameCmd = -1;
+      // await setupWishlistMenus(context);
+      location.reload();
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const setupWishlistMenus = async (context: Context) => {
+    if (context.steam64ID === "") {
+      // eslint-disable-next-line require-atomic-updates
+      context.setUsernameCmd = await GM_registerMenuCommand("Set username", setUsernameMenu(context), "s");
+      return;
+    }
+    // imports the steam wishlist data and reorders the games using the priority
+    await GM_registerMenuCommand("Import Steam Wishlist", async () => {
+      // import steam wishlist games
+      await aksImportSteamWishlist(context);
+      // remove unknown game entries
+      cleanupWishlist();
+      // import the priority
+      await importSteamWishlistPriority(context);
+      // adds icons on the game rows to indicate the game state
+      augmentWishlistGameRows(context);
+    }, "i");
+
+    await GM_registerMenuCommand("Reorder Wishlist", async () => {
+      // import the priority
+      await importSteamWishlistPriority(context);
+      // adds icons on the game rows to indicate the game state
+      augmentWishlistGameRows(context);
+    }, "r");
+
+    await GM_registerMenuCommand("Tidy Database", () => tidyDatabase(context), "t");
+
+    await GM_registerMenuCommand("Cleanup list", cleanupWishlist, "c");
+
+    await GM_registerMenuCommand(`Change steam user`, async () => {
+      context.steam64ID = await getSteam64ID();
+    }, "c");
+
+    const steamIDInputElement = document.querySelector<HTMLInputElement>("input.steam-id-input");
+    if (steamIDInputElement !== null) {
+      steamIDInputElement.value = context.steam64ID;
+      steamIDInputElement.dispatchEvent(new Event("input", {
+        bubbles: true,
+        cancelable: true,
+      }));
+    }
+
+    augmentWishlistGameRows(context);
+  };
+
   class StoreManager<T> implements IndexedDBManager<T> {
     protected databaseName: string;
 
@@ -675,56 +737,22 @@ interface Context extends Record<string, unknown> {
     gameInfo: new GameInfoStore(),
     countryCode: "",
     steam64ID: "",
+    setUsernameCmd: -1,
   });
 
   instance.addStartupCallback(async context => {
-    await context.gameInfo.open();
-  });
-
-  instance.addStartupCallback(async context => {
-    context.countryCode = await getCountryCode();
-  });
-
-  instance.addStartupCallback(async context => {
-    context.steam64ID = await getSteam64ID();
-  });
-
-
-  instance.addPageListener("https://www.allkeyshop.com/blog/list/.+/.+/", async context => {
-    // imports the steam wishlist data and reorders the games using the priority
-    await GM_registerMenuCommand("Import Steam Wishlist", async () => {
-      // import steam wishlist games
-      await aksImportSteamWishlist(context);
-      // remove unknown game entries
-      cleanupWishlist();
-      // import the priority
-      await importSteamWishlistPriority(context);
-      // adds icons on the game rows to indicate the game state
-      augmentWishlistGameRows(context);
-    }, "i");
-
-    await GM_registerMenuCommand("Reorder Wishlist", async () => {
-      // import the priority
-      await importSteamWishlistPriority(context);
-      // adds icons on the game rows to indicate the game state
-      augmentWishlistGameRows(context);
-    }, "r");
-
-    await GM_registerMenuCommand("Tidy Database", () => tidyDatabase(context), "t");
-
-    await GM_registerMenuCommand("Cleanup list", cleanupWishlist, "c");
-
-    const steamIDInputElement = document.querySelector<HTMLInputElement>("input.steam-id-input");
-    if (steamIDInputElement !== null) {
-      steamIDInputElement.value = context.steam64ID;
-      steamIDInputElement.dispatchEvent(new Event("input", {
-        bubbles: true,
-        cancelable: true,
-      }));
+    try {
+      await context.gameInfo.open();
+      /* eslint-disable require-atomic-updates */
+      context.countryCode = await getCountryCode();
+      context.steam64ID = await tryGetLocalStorageValue(steam64IDKey);
+      /* eslint-enable require-atomic-updates */
+    } catch (error) {
+      console.error(error);
     }
-
-    augmentWishlistGameRows(context);
   });
+
+  instance.addPageListener("https://www.allkeyshop.com/blog/list/.+/.+/", setupWishlistMenus);
 
   instance.start();
 })();
