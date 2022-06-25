@@ -12,6 +12,7 @@ declare namespace Tampermonkey {
   type ClipboardInfo = ClipboardOptions | ClipboardType;
   type ValueChangeCallback = (name: string, old_value: Value, new_value: Value, remote: boolean) => void;
   type VoidCallback = () => void;
+  type RawHeaders = Record<string, string>;
 
   interface Response<Context = void> {
     readonly finalUrl: string;
@@ -46,7 +47,7 @@ declare namespace Tampermonkey {
     /** destination URL */
     url: string;
     /** HTTP headers */
-    headers?: Headers;
+    headers?: Headers | RawHeaders;
     /** body string request data */
     data?: string;
     /** cookie data that'll patch the current cookies for this request */
