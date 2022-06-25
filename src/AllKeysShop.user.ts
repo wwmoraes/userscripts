@@ -177,13 +177,13 @@ interface Context extends Record<string, unknown> {
     return resolve(event.target.result);
   };
 
-  const tryGetLocalStorageValue = async (key: string, fallback: () => Promise<string>): Promise<string> => {
+  const tryGetLocalStorageValue = async (key: string, fallback?: () => Promise<string>): Promise<string> => {
     let value = localStorage.getItem(key);
-    if (value === null) {
+    if (value === null && typeof fallback === "function") {
       value = await fallback();
       localStorage.setItem(key, value);
     }
-    return value;
+    return value || "";
   };
 
   const getCountryCode = async (): Promise<string> => {
