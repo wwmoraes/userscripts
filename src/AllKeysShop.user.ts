@@ -88,6 +88,8 @@ interface Context extends Record<string, unknown> {
     return;
   }
 
+  const steam64IDKey = "steam64ID";
+
   const isRecord = (data: unknown):
     data is Record<string, unknown> =>
     data !== null &&
@@ -196,7 +198,7 @@ interface Context extends Record<string, unknown> {
     return countryCode;
   };
 
-  const getSteam64ID = () => tryGetLocalStorageValue("steam64ID", async (): Promise<string> => {
+  const getSteam64ID = () => tryGetLocalStorageValue(steam64IDKey, async (): Promise<string> => {
     const id = prompt("what's your current Steam user name?");
     if (id === null) throw new Error("user name not provided");
 
