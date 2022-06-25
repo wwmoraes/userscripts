@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name            AllKeysShop
+// @name            AllKeyShop
 // @description     better wishlist management and Steam integration
-// @version         0.1.0-rc.1
+// @version         0.2.0
 // @copyright       2021, William Artero (https://artero.dev)
 // @license         MIT; https://opensource.org/licenses/MIT
 // @icon            https://www.allkeyshop.com/blog/wp-content/themes/aks-theme/assets/image/favicon-32x32.png
@@ -9,8 +9,8 @@
 // @homepageURL     https://github.com/wwmoraes/userscripts
 // @supportURL      https://github.com/wwmoraes/userscripts/issues
 // @contributionURL https://github.com/wwmoraes/userscripts
-// @updateURL       https://openuserjs.org/meta/wwmoraes/AllKeysShop.meta.js
-// @downloadURL     https://openuserjs.org/src/scripts/wwmoraes/AllKeysShop.user.js
+// @updateURL       https://openuserjs.org/meta/wwmoraes/AllKeyShop.meta.js
+// @downloadURL     https://openuserjs.org/src/scripts/wwmoraes/AllKeyShop.user.js
 // ==OpenUserJS==
 // @author          wwmoraes
 // ==/OpenUserJS==
